@@ -5,7 +5,8 @@ RUN apk add --no-cache libxml2-dev \
                        jpeg-dev \
                        icu-dev \
                        libmcrypt-dev \
-                       openssl 
+                       openssl \
+                       ssmtp 
 
 RUN docker-php-ext-install xmlrpc \
                            soap \
@@ -17,4 +18,11 @@ RUN docker-php-ext-install xmlrpc \
                            opcache
 
 RUN apk del libxml2-dev
+
+ADD www-pool.conf /usr/local/etc/php-fpm.d/www.conf
+ADD docker-entrypoint.sh /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["entrypoint.sh"]
+
+CMD ["php-fpm"]
 

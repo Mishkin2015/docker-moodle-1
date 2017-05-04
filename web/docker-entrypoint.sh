@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 set +e
 
@@ -27,12 +27,12 @@ if [ ! -f "$MOODLE_ROOT/index.php" ]; then
         -e "s/{DB_NAME}/${DB_NAME:-moodle}/g" \
         -e "s/{DB_USER}/${DB_USER:-moodle}/g" \
         -e "s/{DB_PASS}/${DB_PASS:-moodle}/g" \
-        -e "s/{MOODLE_LANG}/${MOODLE_LANG:-lt}/g" \
     "$MOODLE_CONF"
 fi
 
 cp $MOODLE_CONF $MOODLE_ROOT
 
+rm $NGINX_CONF_DIR/default.conf
 
 if [ -d $NGINX_SSL_DIR ]; then
    if [ ! -f "$NGINX_CONF_DIR/moodle-nginx-ssl.conf" ]; then

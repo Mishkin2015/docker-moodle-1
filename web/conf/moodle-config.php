@@ -24,7 +24,6 @@ $CFG->wwwroot = (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER
 $CFG->dataroot = '/moodle/data'; 
 
 $CFG->admin = 'admin'; 
-$CFG->lang = '{MOODLE_LANG}';
 $CFG->directorypermissions = 0777;
 
 $CFG->xsendfile = 'X-Accel-Redirect';
