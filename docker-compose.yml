@@ -39,7 +39,8 @@ services:
       - DB_PASS=moodle
     volumes:
       - moodle_web:/moodle/web
-      - ./conf.d/:/moodle/conf.d/
+      - ./certs:/etc/ssl/nginx
+      - ./conf.d:/moodle/conf.d
       - ./moodle_data:/moodle/data
 
 volumes:
