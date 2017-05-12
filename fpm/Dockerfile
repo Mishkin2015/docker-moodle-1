@@ -4,6 +4,7 @@ RUN apk add --no-cache libxml2-dev \
                        libpng-dev \
                        jpeg-dev \
                        icu-dev \
+                       pcre-dev \
                        libmcrypt-dev \
                        openssl \
                        ssmtp 
