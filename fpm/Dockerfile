@@ -1,4 +1,4 @@
-FROM php:fpm-alpine
+FROM php:7.0-fpm-alpine
 
 RUN apk add --no-cache libxml2-dev \
                        libpng-dev \
